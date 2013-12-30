@@ -49,6 +49,10 @@ LOCAL_CLANG := true
 LOCAL_CPPFLAGS := -std=c++11 -Wall -Werror
 LOCAL_MODULE := netd
 
+ifdef USES_TI_MAC80211
+LOCAL_CPPFLAGS += -DSINGLE_WIFI_FW
+endif
+
 # Bug: http://b/29823425 Disable -Wvarargs for Clang update to r271374
 LOCAL_CPPFLAGS +=  -Wno-varargs
 
